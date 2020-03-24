@@ -9,22 +9,39 @@ $hpcharacters = $query->fetchAll();
 ?>
 
 <!DOCTYPE html>
-    <body>
-        <main>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="collection.css"/>
+    <title>HP Collection</title>
+</head>
+<body>
+    <main>
+        <div>
             <h1>Harry Potter Characters</h1>
-            <div>
-
-                <?php
-
-                foreach ($hpcharacters as $character) {
-                    echo '<h3>' . $character["name"] . '</h3>';
+        </div>
+        <div class="characters">
+            <?php
+            foreach ($hpcharacters as $character) {
+                if ($character["house"] === 'Gryffindor') {
+                    echo '<div class="character gryffindor"><h3>' . $character["name"] . '</h3>';
                     echo '<p>' . $character["blood-type"] . '</p>';
-                    echo '<p>' . $character["house"] . '</p>';
+                    echo '<p>' . $character["house"] . '</p></div>';
+                } elseif ($character["house"] === 'Slytherin') {
+                    echo '<div class="character slytherin"><h3>' . $character["name"] . '</h3>';
+                    echo '<p>' . $character["blood-type"] . '</p>';
+                    echo '<p>' . $character["house"] . '</p></div>';
+                } elseif ($character["house"] === 'Hufflepuff') {
+                    echo '<div class="character hufflepuff"><h3>' . $character["name"] . '</h3>';
+                    echo '<p>' . $character["blood-type"] . '</p>';
+                    echo '<p>' . $character["house"] . '</p></div>';
+                } else {
+                    echo '<div class="character ravenclaw"><h3>' . $character["name"] . '</h3>';
+                    echo '<p>' . $character["blood-type"] . '</p>';
+                    echo '<p>' . $character["house"] . '</p></div>';
                 }
-
-                ?>
-
-            </div>
-        </main>
-    </body>
+            }
+            ?>
+        </div>
+    </main>
+</body>
 </html>
