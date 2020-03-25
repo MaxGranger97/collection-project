@@ -3,14 +3,12 @@
 function connectToDatabase(): PDO {
     $db = new PDO('mysql:host=DB;dbname=collection', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
     return $db;
 }
 
 function getCharactersFromDB(PDO $db): array {
     $query = $db->prepare('SELECT `name`, `blood-type`, `houses`.`house` FROM `characterinfo` JOIN `houses` ON `characterinfo`.`house` = `houses`.`id`;');
     $query->execute();
-
     return $query->fetchAll();
 }
 

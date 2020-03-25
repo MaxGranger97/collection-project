@@ -8,7 +8,6 @@ $hpcharacters = getCharactersFromDB($db);
 ?>
 
 <!DOCTYPE html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="collection.css"/>
     <title>HP Collection</title>
