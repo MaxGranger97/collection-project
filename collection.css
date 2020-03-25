@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: fantasy;
+    background-color: #00ffff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.characters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.character {
+    background-image: url("https://wizardsunitehub.info/wp-content/uploads/2019/03/hogwarts-background.jpg");
+    background-size: cover;
+    border: 2px solid black;
+    width: 26%;
+    padding: 10px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.gryffindor {
+    color: #ff0000;
+}
+
+.slytherin {
+    color: #008000;
+}
+
+.hufflepuff {
+    color: #ffff00;
+}
+
+.ravenclaw {
+    color: #0000ff;
+}
