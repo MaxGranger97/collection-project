@@ -15,10 +15,11 @@ function getCharactersFromDB(PDO $db): array {
 function displayCharacters(array $hpcharacters): string {
     $charinfo = '';
     foreach ($hpcharacters as $character) {
-        $charinfo .= '<div class="character ' . strtolower($character['house']) . '"><h3>' . $character["name"] . '</h3>';
-        $charinfo .= '<p>' . $character["blood-type"] . '</p>';
-        $charinfo .= '<p>' . $character["house"] . '</p></div>';
+        if (array_key_exists("name", $character) && array_key_exists("blood-type", $character) && array_key_exists("house", $character)) {
+            $charinfo .= '<div class="character ' . strtolower($character['house']) . '"><h3>' . $character["name"] . '</h3>';
+            $charinfo .= '<p>' . $character["blood-type"] . '</p>';
+            $charinfo .= '<p>' . $character["house"] . '</p></div>';
+        }
     }
     return $charinfo;
 }
-

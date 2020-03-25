@@ -23,4 +23,11 @@ class collectiontest extends TestCase {
 
         displayCharacters();
     }
+
+    public function testErrorIncorrectKey() {
+        $expected = '';
+        $actual = displayCharacters([["testname" => "Harry", "testblood" => "pure", "testhouse" => "Gryffindor"]]);
+
+        $this->assertSame($expected, $actual);
+    }
 }
